@@ -9,7 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Express responded");
+  res.send(
+    `Express responded with ${process.env.envVarTest} and test: ${process.env.anotherEnvVar}`
+  );
 });
 
 app.listen(port, () => {
